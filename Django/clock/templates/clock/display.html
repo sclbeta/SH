@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    {% for name in Exam %}
+    <fieldset>
+        <legend>标题:{{ name.name }}</legend>
+            <p>时间 {{ name.starttime }} - {{ name.endtime }}</p>
+            <p>开始命令 {{ name.command1 }} | 结束命令 {{ name.command2 }}</p>
+            <p>
+                {% if name.week0 %}今天{% endif %}
+                {% if name.week1 %} | 周一{% endif %}
+                {% if name.week2 %} | 周二{% endif %}
+                {% if name.week3 %} | 周三{% endif %}
+                {% if name.week4 %} | 周四{% endif %}
+                {% if name.week5 %} | 周五{% endif %}
+                {% if name.week6 %} | 周六{% endif %}
+                {% if name.week7 %} | 周天{% endif %}
+            </p>
+    </fieldset>
+    {% endfor %}
+</body>
+</html>

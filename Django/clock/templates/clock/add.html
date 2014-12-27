@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+    </html>
+<head>
+    <title>Clock</title>
+</head>
+<body>
+    <form action="/clock/add.html" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Add Clock</legend>
+                <p>标题 {{ form_info.name }}</p>
+                <p>开始 {{ form_info.starttime }}</p>
+                <p>命令 {{ form_info.command1 }}</p>
+                <p>结束 {{ form_info.endtime }}</p>
+                <p>命令 {{ form_info.command2 }}</p>
+                <p>今天 {{ form_info.week0 }} | 周天 {{ form_info.week7 }}</p>
+                <p>周一 {{ form_info.week1 }} | 周二 {{ form_info.week2 }}</p>
+                <p>周三 {{ form_info.week3 }} | 周四 {{ form_info.week4 }}</p>
+                <p>周五 {{ form_info.week5 }} | 周六 {{ form_info.week6 }}</p>
+            <input type="submit" value="submit" />
+        </fieldset>
+    </form>
+</body>
+    </html>  

@@ -1,0 +1,10 @@
+{% load staticfiles %}
+<div align="center">
+{% for jpgid in jpgids %}
+    {% if not jpgid %}
+    <a href="/light/{{ forloop.counter }}/"><img src="{% static "light/0.jpg" %}" /></a>
+    {% else %}
+    <a href="/light/{{ forloop.counter }}/"><img src="{% static "light/1.jpg" %}" /></a>
+    {% endif %}
+{% endfor %}
+</div>

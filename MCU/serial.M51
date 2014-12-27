@@ -1,0 +1,131 @@
+BL51 BANKED LINKER/LOCATER V5.12                                                        12/26/2014  20:51:44  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.12, INVOKED BY:
+C:\PROGRAM FILES\KEIL\C51\BIN\BL51.EXE serial.obj TO serial RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  serial.obj (SERIAL)
+  C:\PROGRAM FILES\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  serial (SERIAL)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?SERIAL
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0012H     UNIT         ?PR?INITUART?SERIAL
+            CODE    0015H     000CH     UNIT         ?C_C51STARTUP
+                    0021H     0002H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     003CH     UNIT         ?PR?UART?SERIAL
+            CODE    0062H     0009H     UNIT         ?PR?MAIN?SERIAL
+
+
+
+OVERLAY MAP OF MODULE:   serial (SERIAL)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?SERIAL
+
+?PR?MAIN?SERIAL
+  +--> ?PR?INITUART?SERIAL
+
+
+
+SYMBOL TABLE OF MODULE:  serial (SERIAL)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SERIAL
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+BL51 BANKED LINKER/LOCATER V5.12                                                      12/26/2014  20:51:44  PAGE 2
+
+
+  D:00A8H         PUBLIC        IE
+  B:00A8H.4       PUBLIC        ES
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:0026H         PUBLIC        Uart
+  C:0062H         PUBLIC        main
+  D:0008H         PUBLIC        count
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  C:0003H         PUBLIC        InitUart
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:0009H         PUBLIC        dat
+  D:008DH         PUBLIC        TH1
+  B:0090H.0       PUBLIC        p10
+  D:008BH         PUBLIC        TL1
+  B:0090H.1       PUBLIC        p11
+  B:0088H.6       PUBLIC        TR1
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0062H         LINE#         33
+  C:0062H         LINE#         34
+  C:0062H         LINE#         35
+  C:0065H         LINE#         36
+  C:0067H         LINE#         37
+  C:0069H         LINE#         38
+  -------         ENDPROC       MAIN
+  -------         PROC          UART
+  C:0026H         LINE#         44
+  C:002AH         LINE#         57
+  C:002DH         LINE#         58
+  C:002DH         LINE#         59
+  C:002FH         LINE#         60
+  C:0032H         LINE#         61
+  C:0035H         LINE#         63
+  C:0048H         LINE#         64
+  C:0048H         LINE#         65
+  C:004CH         LINE#         66
+  C:0050H         LINE#         67
+  C:0054H         LINE#         68
+  C:0058H         LINE#         69
+  C:005BH         LINE#         71
+  C:005BH         LINE#         72
+  C:005DH         LINE#         73
+  C:005DH         LINE#         74
+  -------         ENDPROC       UART
+  -------         PROC          INITUART
+  C:0003H         LINE#         79
+  C:0003H         LINE#         80
+  C:0003H         LINE#         81
+  C:0006H         LINE#         82
+  C:0009H         LINE#         83
+  C:000CH         LINE#         86
+  C:000FH         LINE#         87
+BL51 BANKED LINKER/LOCATER V5.12                                                      12/26/2014  20:51:44  PAGE 3
+
+
+  C:0012H         LINE#         88
+  C:0014H         LINE#         89
+  -------         ENDPROC       INITUART
+  -------         ENDMOD        SERIAL
+
+Program Size: data=11.0 xdata=0 code=105
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
