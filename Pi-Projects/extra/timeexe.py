@@ -21,8 +21,8 @@ def jiexi():
             #print starttime,endtime,command1,command2
             if time.ctime()[11:16] in starttime:
                 #print 'kaishishijian'
-                urllib2.urlopen('http://127.0.0.1:8185\light\2')
+                urllib2.urlopen('http://127.0.0.1:8185/light/2')
             elif time.ctime()[11:16] in endtime:
                 #print 'jieshushijian'
-                urllib2.urlopen('http://127.0.0.1:8185\light\2')
+                urllib2.urlopen('http://127.0.0.1:8185/light/2')
         time.sleep(60)
