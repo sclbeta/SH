@@ -247,3 +247,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+*.pyproj
+*.sln
+*.suo

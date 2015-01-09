@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'light',
     'home',
     'clock',
+    'extra'
 )
 
 MIDDLEWARE_CLASSES = (
