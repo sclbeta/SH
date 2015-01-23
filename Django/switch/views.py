@@ -1,24 +1,24 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse,Http404
-from light.models import Light
-from extra.xpru import fass
+from switch.models import Switch
+from extra.extra import fass
 #from django.contrib.auth.decorators import login_required
 #@login_required(login_url="/login/")
 def index(request):
     jpgids = [True,True]
     for i in range(1,3):
-        l = get_object_or_404(Light,pk = i)
+        l = get_object_or_404(Switch,pk = i)
         id= l.status
         if id:
             jpgids[i-1] = True
         else:
             jpgids[i-1] = False
-    return render(request,'light/index.html',{'jpgids':jpgids})
+    return render(request,'switch/index.html',{'jpgids':jpgids})
 
 def detail(request,pk):
 
     gp = ['\xfe','\xfd','\x01','\x02']
-    l = get_object_or_404(Light,pk = pk)
+    l = get_object_or_404(Switch,pk = pk)
     st= l.status
     pk = int(pk)
     if st:
@@ -32,10 +32,10 @@ def detail(request,pk):
 
     jpgids = [True,True]
     for i in range(1,3):
-        l = get_object_or_404(Light,pk = i)
+        l = get_object_or_404(Switch,pk = i)
         id= l.status
         if id:
             jpgids[i-1] = True
         else:
             jpgids[i-1] = False
-    return render(request,'light/index.html',{'jpgids':jpgids})
+    return render(request,'switch/index.html',{'jpgids':jpgids})

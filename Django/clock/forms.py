@@ -1,6 +1,6 @@
 from django.forms import ModelForm  
-from clock.models import ExamInfo  
-class ExamInfoForm(ModelForm):  
+from timer.models import TimerInfo  
+class TimerInfoForm(ModelForm):  
     class Meta:  
-        model = ExamInfo  
+        model = TimerInfo  
         fields = '__all__' 

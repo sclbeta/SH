@@ -5,7 +5,7 @@ cmd = (
     ('on', 'on'),  
     ('off', 'off'),  
 )  
-class ExamInfo(models.Model):  
+class TimerInfo(models.Model):  
     name = models.CharField(max_length=20)  
     starttime = models.TimeField()
     endtime = models.TimeField()

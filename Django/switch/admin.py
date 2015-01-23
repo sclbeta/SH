@@ -1,5 +1,5 @@
 from django.contrib import admin
-from light.models import Light
+from switch.models import Switch
 # Register your models here.
 
-admin.site.register(Light)
+admin.site.register(Switch)
