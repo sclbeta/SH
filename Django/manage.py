@@ -3,8 +3,7 @@ import os
 import sys
 import threading
 
-
-ser = serial.Serial(/dev/ttyAMA0,9600)
+ser = serial.Serial('/dev/ttyAMA0',9600)
 
 def irkz():
     while 1:
@@ -12,7 +11,7 @@ def irkz():
         if xp:
             ser.write(xp)
             ser.flushinput()
-            
+
         uz = ser.inwaiting() #get the data
         if uz:
             nwrs = ser.read(uz)
@@ -22,10 +21,10 @@ def irkz():
 def main():
     threads = []
     threads.append(threading.Thread(target = irkz,args = ''))
-        
+
     for thread in threads:
         thread.start()
-        
+
     for thread in threads:
         thread.join()
 
@@ -37,7 +36,7 @@ if __name__ == "__main__":
     if not os.path.exists('/tmp/mklkfifo'):
         os.system('mkfifo /tmp/mklkfifo')
     f = file('/tmp/mklkfifo','r')
-    main()
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
     from django.core.management import execute_from_command_line
     execute_from_command_line(sys.argv)
+    main()

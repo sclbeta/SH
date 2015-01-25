@@ -11,5 +11,5 @@ def fass(x,y):  #get sqlte3's object and write the data to mklkfifo,then the 'se
     f.write(mklk)
     f.close()
 
-def jpuz():#get the data from 'ser' function and judge what to do
+def jpuz(nwrs):#get the data from 'ser' function and judge what to do
     pass
