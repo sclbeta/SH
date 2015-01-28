@@ -15,7 +15,7 @@ void InitUart();
 int count=0;
 
 
-void Intr() interrupt 0
+void Intr() interrupt 0  //中断
 {
 	count = 1;
 	dat = P0;
@@ -30,12 +30,10 @@ void main()
     EA = 1;
 	TI = 0;
 
-	IT0 = 1;
+	IT0 = 1;   //初始化中断
 	EX0 = 1;
 
 	p10=0;
-	//P0 = 0x00;
-
 	while (1);
 }
 

@@ -12,7 +12,7 @@ def irkz():
             ser.write(xp)
             ser.flushinput()
 
-        uz = ser.inwaiting() #get the data
+        uz = ser.inWaiting() #get the data
         if uz:
             nwrs = ser.read(uz)
             extra.jpuz(nwrs)    #call the function

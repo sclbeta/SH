@@ -7,9 +7,17 @@ def fass(x,y):  #get sqlte3's object and write the data to mklkfifo,then the 'se
     y1 = y1.vfmklk
     mklk = str(x1) + str(y1)
 
+
+def jpuz(nwrs):#get the data from 'ser' function and judge what to do
+    mklk = {
+        0xfe:'\xfe',
+        0xfd:'\xfd',
+        0xfb:'\x01',
+        0xf7:'\x02',
+        }
+    xpru(nwrs.encode('hex'))
+
+def xpru(mklk):
     f = file('/tmp/mklkfifo','w')
     f.write(mklk)
     f.close()
-
-def jpuz(nwrs):#get the data from 'ser' function and judge what to do
-    pass
