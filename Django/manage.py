@@ -2,8 +2,9 @@
 import os
 import sys
 import threading
+import serial
 
-ser = serial.Serial('/dev/ttyAMA0',9600)
+ser = serial.Serial('/dev/ttyAMA0', 9600)
 
 def irkz():
     while 1:
