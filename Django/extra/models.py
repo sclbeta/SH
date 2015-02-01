@@ -7,7 +7,7 @@ class vsdrhc(models.Model):
     vfvsdrhc = models.CharField(max_length = 200)
     
     def __unicode__(self):
-        return self.location
+        return self.wwvsdrhc
 
 class mklk(models.Model):
     kinds = models.CharField(max_length = 200)
@@ -15,4 +15,4 @@ class mklk(models.Model):
     vfmklk = models.CharField(max_length = 200)
     
     def __unicode__(self):
-        return self.location
+        return self.wwmklk

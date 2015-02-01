@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse,Http404
 from switch.models import Switch
-from extra.extra import fass
+from extra.main import xpru
 #from django.contrib.auth.decorators import login_required
 #@login_required(login_url="/login/")
 def index(request):
@@ -23,10 +23,12 @@ def detail(request,pk):
     pk = int(pk)
     if st:
         st = True
+        xpru(gp[pk-1])
         l.status = 0
         l.save()
     else:
         st = False
+        xpru(gp[pk+1])
         l.status = 1
         l.save()
 
