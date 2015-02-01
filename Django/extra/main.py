@@ -17,7 +17,6 @@ def jpuz(nwrs):#get the data from 'ser' function and judge what to do
         'f7':'\x02',
         }
     xpru(mklk[nwrs.encode('hex')])
-    return mklk[nwrs.encode('hex')]
 
 def xpru(mklk):
     f = file('/tmp/mklkfifo','w')
