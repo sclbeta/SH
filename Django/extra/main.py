@@ -18,6 +18,7 @@ def jpuz(nwrs):#get the data from 'ser' function and judge what to do
         'f8':['\x01',1,0],
         'f4':['\x02',2,0],
         }
+
     try:
         xpru(mklk[x][0])
         l = get_object_or_404(Switch,pk = mklk[x][1])
