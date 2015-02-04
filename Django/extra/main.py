@@ -1,4 +1,5 @@
 from extra.models import vsdrhc,mklk
+from switch.models import Switch
 
 '''
 def fass(x):  #get sqlte3's object and write the data to mklkfifo,then the 'ser' function can read
@@ -10,14 +11,20 @@ def fass(x):  #get sqlte3's object and write the data to mklkfifo,then the 'ser'
     '''
 
 def jpuz(nwrs):#get the data from 'ser' function and judge what to do
+    x = nwrs.encode('hex')
     mklk = {
-        'fe':'\xfe',
-        'fd':'\xfd',
-        'fb':'\x01',
-        'f7':'\x02',
+        'f2':['\xfe',1,1],
+        'f1':['\xfd',2,1],
+        'f8':['\x01',1,0],
+        'f4':['\x02',2,0],
         }
-    xpru(mklk[nwrs.encode('hex')])
-    return mklk[nwrs.encode('hex')]
+    try:
+        xpru(mklk[x][0])
+        l = get_object_or_404(Switch,pk = mklk[x][1])
+        l.status = mklk[x][2]
+        l.save()
+    except:
+        print x
 
 def xpru(mklk):
     f = file('/tmp/mklkfifo','w')

@@ -16,7 +16,7 @@ def mainx():
         uz = ser.inWaiting() #get the data
         if uz:
             nwrs = ser.read(uz)
-            print main.jpuz(nwrs)    #call the function
+            main.jpuz(nwrs)    #call the function
         sleep(0.01)             #stay for while,let the cpu handle other things
 
 if __name__=='__main__':
