@@ -26,7 +26,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []  #example['*']
+ALLOWED_HOSTS = []  #timerple['*']
 
 
 # Application definition
@@ -38,9 +38,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'light',
+    'switch',
     'home',
-    'clock',
+    'timer',
+    'extra'
 )
 
 MIDDLEWARE_CLASSES = (
