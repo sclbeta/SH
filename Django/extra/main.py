@@ -1,5 +1,6 @@
 from extra.models import vsdrhc,mklk
 from switch.models import Switch
+from django.shortcuts import render,get_object_or_404
 
 '''
 def fass(x):  #get sqlte3's object and write the data to mklkfifo,then the 'ser' function can read
