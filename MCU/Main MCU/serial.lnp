@@ -1,0 +1,3 @@
+"serial.obj" 
+TO "serial" 
+RAMSIZE(256) 
